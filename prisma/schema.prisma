@@ -1,0 +1,104 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Configured for Supabase PostgreSQL
+// DATABASE_URL is configured in prisma.config.ts
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ============================================
+// USER PREFERENCES & SETTINGS
+// ============================================
+
+model UserPreference {
+  id        String   @id @default(cuid())
+  email     String?  @unique
+  language  String   @default("fr") // fr, es, en
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("user_preferences")
+}
+
+// ============================================
+// CONCIERGERIE REQUESTS
+// ============================================
+
+model ConciergerieRequest {
+  id          String   @id @default(cuid())
+  name        String
+  email       String
+  phone       String
+  vehicleType String   // suv, sport, berline
+  budget      String   // 20-40k, 40-60k, 60-100k, 100k+
+  status      String   @default("pending") // pending, contacted, completed
+  notes       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("conciergerie_requests")
+}
+
+// ============================================
+// VEHICLE CATALOG (for future stock management)
+// ============================================
+
+model Vehicle {
+  id           String   @id @default(cuid())
+  brand        String
+  model        String
+  year         Int
+  price        Float?
+  category     String   // offroad, prestige, family
+  description  String?
+  imageUrl     String?
+  available    Boolean  @default(true)
+  featured     Boolean  @default(false)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@map("vehicles")
+}
+
+// ============================================
+// PARTS CATALOG (for future parts management)
+// ============================================
+
+model Part {
+  id          String   @id @default(cuid())
+  name        String
+  category    String   // engine, body, brakes, electronics
+  brand       String?
+  partNumber  String?
+  price       Float?
+  description String?
+  imageUrl    String?
+  available   Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("parts")
+}
+
+// ============================================
+// CONTACT MESSAGES
+// ============================================
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String?
+  message   String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@map("contact_messages")
+}
