@@ -151,7 +151,7 @@ export const es: Translations = {
             berline: { label: 'Sedán', description: 'Elegancia y Confort' },
         },
         budgetRanges: {
-            '20-40k': { label: '20.000€ - 40.000€', description: 'Gama de entrada premium' },
+            '20-40k': { label: '10.000€ - 40.000€', description: 'Gama de entrada premium' },
             '40-60k': { label: '40.000€ - 60.000€', description: 'Gama media' },
             '60-100k': { label: '60.000€ - 100.000€', description: 'Gama alta' },
             '100k+': { label: '100.000€+', description: 'Prestigio y Colección' },

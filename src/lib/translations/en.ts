@@ -151,7 +151,7 @@ export const en: Translations = {
             berline: { label: 'Sedan', description: 'Elegance & Comfort' },
         },
         budgetRanges: {
-            '20-40k': { label: '€20,000 - €40,000', description: 'Premium entry level' },
+            '20-40k': { label: '€10,000 - €40,000', description: 'Premium entry level' },
             '40-60k': { label: '€40,000 - €60,000', description: 'Mid-range' },
             '60-100k': { label: '€60,000 - €100,000', description: 'High-end' },
             '100k+': { label: '€100,000+', description: 'Prestige & Collection' },

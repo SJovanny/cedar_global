@@ -151,7 +151,7 @@ export const fr: Translations = {
             berline: { label: 'Berline', description: 'Élégance & Confort' },
         },
         budgetRanges: {
-            '20-40k': { label: '20 000€ - 40 000€', description: 'Entrée de gamme premium' },
+            '20-40k': { label: '10 000€ - 40 000€', description: 'Entrée de gamme premium' },
             '40-60k': { label: '40 000€ - 60 000€', description: 'Milieu de gamme' },
             '60-100k': { label: '60 000€ - 100 000€', description: 'Haut de gamme' },
             '100k+': { label: '100 000€+', description: 'Prestige & Collection' },
