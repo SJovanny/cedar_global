@@ -13,10 +13,10 @@ export default function Navbar() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const navLinks = [
-        { label: t.nav.services, href: "#services" },
+        { label: t.nav.services, href: "/#services" },
         { label: t.nav.orderParts, href: "/order-parts" },
-        { label: t.nav.conciergerie, href: "#conciergerie" },
-        { label: t.nav.about, href: "#apropos" },
+        { label: t.nav.conciergerie, href: "/#conciergerie" },
+        { label: t.nav.about, href: "/#apropos" },
     ];
 
     useEffect(() => {

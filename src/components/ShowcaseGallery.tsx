@@ -288,15 +288,15 @@ export default function ShowcaseGallery() {
 
                                     {/* Content */}
                                     <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-                                        Toutes vos pièces détachées
+                                        {t.showcase.partsCard.title}
                                     </h3>
                                     <p className="text-foreground-muted text-lg mb-6 max-w-2xl">
-                                        Nous importons <span className="text-accent font-semibold">TOUTES</span> les pièces détachées pour <span className="text-accent font-semibold">TOUS</span> les types de véhicules : européens, japonais, américains.
+                                        {t.showcase.partsCard.description}
                                     </p>
 
                                     {/* Examples */}
                                     <div className="flex flex-wrap gap-3 mb-8">
-                                        {["Moteurs", "Transmissions", "Freins", "Carrosserie", "Électronique", "Suspension", "Échappement", "Climatisation"].map((part) => (
+                                        {t.showcase.partsCard.categories.map((part) => (
                                             <span key={part} className="px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium">
                                                 {part}
                                             </span>
@@ -316,7 +316,7 @@ export default function ShowcaseGallery() {
                                         href="/order-parts"
                                         className="inline-flex items-center gap-2 px-8 py-4 bg-accent hover:bg-accent-hover text-background font-semibold rounded-full transition-colors"
                                     >
-                                        Commander mes pièces
+                                        {t.showcase.partsCard.orderCta}
                                         <ChevronRight className="w-5 h-5" />
                                     </a>
                                 </div>
@@ -325,6 +325,6 @@ export default function ShowcaseGallery() {
                     )}
                 </AnimatePresence>
             </div>
-        </section>
+        </section >
     );
 }

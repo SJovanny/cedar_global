@@ -126,6 +126,12 @@ export const es: Translations = {
                 description: 'Calculadores, pantallas, sistemas multimedia, módulos de confort.',
             },
         },
+        partsCard: {
+            title: 'Todos Sus Repuestos',
+            description: 'Importamos TODOS los repuestos para TODOS los tipos de vehículos: europeos, japoneses, americanos.',
+            categories: ['Motores', 'Transmisiones', 'Frenos', 'Carrocería', 'Electrónica', 'Suspensión', 'Escape', 'Climatización'],
+            orderCta: 'Pedir Mis Repuestos',
+        },
     },
 
     // Conciergerie Form

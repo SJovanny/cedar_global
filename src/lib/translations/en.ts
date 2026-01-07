@@ -126,6 +126,12 @@ export const en: Translations = {
                 description: 'ECUs, displays, multimedia systems, comfort modules.',
             },
         },
+        partsCard: {
+            title: 'All Your Spare Parts',
+            description: 'We import ALL spare parts for ALL types of vehicles: European, Japanese, American.',
+            categories: ['Engines', 'Transmissions', 'Brakes', 'Body Parts', 'Electronics', 'Suspension', 'Exhaust', 'Air Conditioning'],
+            orderCta: 'Order My Parts',
+        },
     },
 
     // Conciergerie Form

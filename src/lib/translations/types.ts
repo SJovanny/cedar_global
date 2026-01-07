@@ -65,6 +65,12 @@ export interface Translations {
             brakes: { title: string; subtitle: string; description: string };
             electronics: { title: string; subtitle: string; description: string };
         };
+        partsCard: {
+            title: string;
+            description: string;
+            categories: string[];
+            orderCta: string;
+        };
     };
     form: {
         eyebrow: string;

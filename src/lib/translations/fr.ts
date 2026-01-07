@@ -126,6 +126,12 @@ export const fr: Translations = {
                 description: 'Calculateurs, écrans, systèmes multimédia, modules de confort.',
             },
         },
+        partsCard: {
+            title: 'Toutes vos pièces détachées',
+            description: 'Nous importons TOUTES les pièces détachées pour TOUS les types de véhicules : européens, japonais, américains.',
+            categories: ['Moteurs', 'Transmissions', 'Freins', 'Carrosserie', 'Électronique', 'Suspension', 'Échappement', 'Climatisation'],
+            orderCta: 'Commander mes pièces',
+        },
     },
 
     // Conciergerie Form
