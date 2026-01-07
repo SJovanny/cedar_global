@@ -5,8 +5,10 @@ export type Language = 'fr' | 'es' | 'en';
 // Define the translation structure as an interface
 export interface Translations {
     nav: {
-        stock: string;
+        services: string;
+        orderParts: string;
         conciergerie: string;
+        stock: string;
         pieces: string;
         about: string;
         myProject: string;
@@ -23,14 +25,21 @@ export interface Translations {
     brandTicker: {
         label: string;
     };
+    trustBar: {
+        items: {
+            payment: { title: string; description: string };
+            logistics: { title: string; description: string };
+            network: { title: string; description: string };
+        };
+    };
     services: {
         eyebrow: string;
         title: string;
         subtitle: string;
         import: { title: string; description: string };
-        conciergerie: { title: string; description: string };
+        export: { title: string; description: string };
         parts: { title: string; description: string };
-        network: { title: string; description: string };
+        search: { title: string; description: string };
     };
     showcase: {
         eyebrow: string;
@@ -118,5 +127,41 @@ export interface Translations {
         };
         copyright: string;
         tagline: string;
+    };
+    partsOrder: {
+        pageTitle: string;
+        pageSubtitle: string;
+        back: string;
+        vehicleSection: string;
+        brand: string;
+        brandPlaceholder: string;
+        model: string;
+        modelPlaceholder: string;
+        year: string;
+        yearPlaceholder: string;
+        vin: string;
+        vinPlaceholder: string;
+        partsSection: string;
+        partsDescription: string;
+        partsPlaceholder: string;
+        urgency: string;
+        urgencyNormal: string;
+        urgencyUrgent: string;
+        urgencyExpress: string;
+        contactSection: string;
+        name: string;
+        namePlaceholder: string;
+        phone: string;
+        phonePlaceholder: string;
+        email: string;
+        emailPlaceholder: string;
+        message: string;
+        messagePlaceholder: string;
+        submit: string;
+        submitting: string;
+        info: string;
+        successTitle: string;
+        successMessage: string;
+        backToHome: string;
     };
 }

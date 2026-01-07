@@ -13,9 +13,9 @@ export default function Navbar() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const navLinks = [
-        { label: t.nav.stock, href: "#stock" },
+        { label: t.nav.services, href: "#services" },
+        { label: t.nav.orderParts, href: "/order-parts" },
         { label: t.nav.conciergerie, href: "#conciergerie" },
-        { label: t.nav.pieces, href: "#pieces" },
         { label: t.nav.about, href: "#apropos" },
     ];
 

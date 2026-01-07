@@ -4,8 +4,10 @@ import type { Translations } from './types';
 export const en: Translations = {
     // Navbar
     nav: {
+        services: 'Our Services',
+        orderParts: 'Order Parts',
+        conciergerie: 'Concierge',
         stock: 'Stock',
-        conciergerie: 'Concierge Service',
         pieces: 'Parts',
         about: 'About Us',
         myProject: 'My Project',
@@ -27,6 +29,24 @@ export const en: Translations = {
         label: 'The brands we import',
     },
 
+    // Trust Bar
+    trustBar: {
+        items: {
+            payment: {
+                title: 'Secure Payment',
+                description: '100% secure and guaranteed transactions',
+            },
+            logistics: {
+                title: 'Complete Logistics',
+                description: 'From European port to your door',
+            },
+            network: {
+                title: 'Certified Network',
+                description: 'Partner garages in the Caribbean',
+            },
+        },
+    },
+
     // Services Grid
     services: {
         eyebrow: 'Our Services',
@@ -36,17 +56,17 @@ export const en: Translations = {
             title: 'Vehicle Import',
             description: 'Carefully selected premium European vehicles. BMW, Mercedes, Audi, Porsche and much more.',
         },
-        conciergerie: {
-            title: 'Concierge Service',
-            description: 'A bespoke service to find the vehicle of your dreams. We search, you choose.',
+        export: {
+            title: 'Vehicle Export',
+            description: 'Export your vehicle from the Caribbean to Europe or other destinations.',
         },
         parts: {
             title: 'Spare Parts',
-            description: 'Original and high-quality parts imported directly from Europe.',
+            description: 'Original and high-quality parts for ALL types of vehicles. European, Japanese, American - we find what you need.',
         },
-        network: {
-            title: 'Garage Network',
-            description: 'Trusted partners for the maintenance and repair of your vehicle.',
+        search: {
+            title: 'Vehicle Search',
+            description: 'A bespoke service to find the vehicle of your dreams. We search, you choose.',
         },
     },
 
@@ -60,7 +80,7 @@ export const en: Translations = {
         searchCta: 'Start a search',
         quoteCta: 'Request a quote',
         customSearchCta: 'Configure my custom search',
-        customSearchPrompt: 'Have a specific model in mind?',
+        customSearchPrompt: '',
         partsInfo: '💡 All our parts are sourced directly from authorized European suppliers.',
         partsGuarantee: 'OEM or high-quality equivalent • Warranty included',
         expertise: 'Expertise',
@@ -78,10 +98,10 @@ export const en: Translations = {
                 examples: 'Porsche 911, AMG GT, Audi RS, BMW M',
             },
             family: {
-                title: 'Family Business',
+                title: 'Daily Car',
                 subtitle: 'Comfort & Versatility',
-                description: 'Spacious high-end SUVs for family or business.',
-                examples: 'Range Rover, BMW X5, Audi Q8, GLE',
+                description: 'Spacious sedans and SUVs for daily driving, family or business.',
+                examples: 'Toyota C-HR, Hyundai i10, Nissan Qashqai, Kia Sportage',
             },
         },
         parts: {
@@ -181,5 +201,41 @@ export const en: Translations = {
         },
         copyright: '© {year} Cedar Global. All rights reserved.',
         tagline: 'Made with passion for the Caribbean 🌴',
+    },
+    partsOrder: {
+        pageTitle: 'Order My Parts',
+        pageSubtitle: 'Fill out the form and receive your quote within 24-48h',
+        back: 'Back',
+        vehicleSection: 'Vehicle Information',
+        brand: 'Brand',
+        brandPlaceholder: 'Ex: BMW, Mercedes, Toyota...',
+        model: 'Model',
+        modelPlaceholder: 'Ex: X5, E-Class, Corolla...',
+        year: 'Year',
+        yearPlaceholder: 'Ex: 2020',
+        vin: 'VIN Number (optional)',
+        vinPlaceholder: '17 characters',
+        partsSection: 'Parts Needed',
+        partsDescription: 'Describe the parts you need',
+        partsPlaceholder: 'Ex: Front brake discs, pads, right caliper...',
+        urgency: 'Urgency',
+        urgencyNormal: 'Normal (2-3 weeks)',
+        urgencyUrgent: 'Urgent (1 week)',
+        urgencyExpress: 'Express (3-5 days)',
+        contactSection: 'Your Contact Details',
+        name: 'Full Name',
+        namePlaceholder: 'Your name',
+        phone: 'Phone',
+        phonePlaceholder: '+1 ...',
+        email: 'Email',
+        emailPlaceholder: 'your@email.com',
+        message: 'Additional Message',
+        messagePlaceholder: 'Additional information...',
+        submit: 'Send My Request',
+        submitting: 'Sending...',
+        info: '💡 We will respond within 24-48h with a detailed quote. Secure payment upon order.',
+        successTitle: 'Request Sent!',
+        successMessage: 'We have received your spare parts request. Our team will contact you within 24-48h with a personalized quote.',
+        backToHome: 'Back to Home',
     },
 };

@@ -1,7 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { Search, Wrench, MapPin, ArrowUpRight } from "lucide-react";
+import { Search, Wrench, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { useTranslation } from "@/contexts/LanguageContext";
 
@@ -10,8 +11,7 @@ interface ServiceCardProps {
     description: string;
     icon?: React.ReactNode;
     className?: string;
-    hasImage?: boolean;
-    imageGradient?: string;
+    imageSrc?: string;
     delay?: number;
 }
 
@@ -20,8 +20,7 @@ function ServiceCard({
     description,
     icon,
     className,
-    hasImage = false,
-    imageGradient,
+    imageSrc,
     delay = 0,
 }: ServiceCardProps) {
     return (
@@ -34,18 +33,21 @@ function ServiceCard({
             className={cn(
                 "group relative overflow-hidden rounded-3xl border border-glass-border transition-all duration-500",
                 "hover:border-accent/30 hover:shadow-2xl hover:shadow-accent/10",
-                hasImage ? "glass" : "glass-strong",
+                imageSrc ? "glass" : "glass-strong",
                 className
             )}
         >
-            {/* Background gradient for image cards */}
-            {hasImage && (
-                <div
-                    className={cn(
-                        "absolute inset-0 opacity-60 group-hover:opacity-80 transition-opacity duration-500",
-                        imageGradient
-                    )}
-                />
+            {/* Background Image */}
+            {imageSrc && (
+                <>
+                    <Image
+                        src={imageSrc}
+                        alt={title}
+                        fill
+                        className="object-cover opacity-75 group-hover:opacity-90 group-hover:scale-105 transition-all duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+                </>
             )}
 
             {/* Content */}
@@ -105,24 +107,23 @@ export default function ServicesGrid() {
                     </p>
                 </motion.div>
 
-                {/* Bento Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                    {/* Large Card - Import Véhicule */}
+                {/* Bento Grid - 4 Cards Layout */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                    {/* Import Véhicule */}
                     <ServiceCard
                         title={t.services.import.title}
                         description={t.services.import.description}
-                        hasImage
-                        imageGradient="bg-gradient-to-t from-background via-background/80 to-transparent"
-                        className="lg:row-span-2 min-h-[300px] lg:min-h-[500px]"
+                        imageSrc="/bento-import.png"
+                        className="min-h-[280px]"
                         delay={0.1}
                     />
 
-                    {/* La Conciergerie */}
+                    {/* Export Véhicule */}
                     <ServiceCard
-                        title={t.services.conciergerie.title}
-                        description={t.services.conciergerie.description}
-                        icon={<Search className="w-6 h-6 text-accent" />}
-                        className="min-h-[220px]"
+                        title={t.services.export.title}
+                        description={t.services.export.description}
+                        imageSrc="/bento-export-v2.png"
+                        className="min-h-[280px]"
                         delay={0.2}
                     />
 
@@ -130,17 +131,17 @@ export default function ServicesGrid() {
                     <ServiceCard
                         title={t.services.parts.title}
                         description={t.services.parts.description}
-                        icon={<Wrench className="w-6 h-6 text-accent" />}
+                        imageSrc="/bento-pieces.png"
                         className="min-h-[220px]"
                         delay={0.3}
                     />
 
-                    {/* Réseau Garages */}
+                    {/* Recherche Véhicule */}
                     <ServiceCard
-                        title={t.services.network.title}
-                        description={t.services.network.description}
-                        icon={<MapPin className="w-6 h-6 text-accent" />}
-                        className="md:col-span-2 lg:col-span-2 min-h-[220px]"
+                        title={t.services.search.title}
+                        description={t.services.search.description}
+                        imageSrc="/bento-recherche.png"
+                        className="min-h-[220px]"
                         delay={0.4}
                     />
                 </div>

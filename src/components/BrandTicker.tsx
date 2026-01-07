@@ -9,11 +9,9 @@ const brands = [
     { name: "MERCEDES", logo: "Mercedes-Benz" },
     { name: "PORSCHE", logo: "Porsche" },
     { name: "VOLKSWAGEN", logo: "Volkswagen" },
-    { name: "AUDI", logo: "Audi" },
-    { name: "BMW", logo: "BMW" },
-    { name: "MERCEDES", logo: "Mercedes-Benz" },
-    { name: "PORSCHE", logo: "Porsche" },
-    { name: "VOLKSWAGEN", logo: "Volkswagen" },
+    { name: "TOYOTA", logo: "Toyota" },
+    { name: "NISSAN", logo: "Nissan" },
+    { name: "MAZDA", logo: "Mazda" },
 ];
 
 export default function BrandTicker() {

@@ -4,8 +4,10 @@ import type { Translations } from './types';
 export const fr: Translations = {
     // Navbar
     nav: {
+        services: 'Nos Services',
+        orderParts: 'Commander Pièces',
+        conciergerie: 'Conciergerie',
         stock: 'Stock',
-        conciergerie: 'La Conciergerie',
         pieces: 'Pièces',
         about: 'À Propos',
         myProject: 'Mon Projet',
@@ -27,6 +29,24 @@ export const fr: Translations = {
         label: 'Les marques que nous importons',
     },
 
+    // Trust Bar
+    trustBar: {
+        items: {
+            payment: {
+                title: 'Paiement Sécurisé',
+                description: 'Transactions 100% sécurisées et garanties',
+            },
+            logistics: {
+                title: 'Logistique Complète',
+                description: 'Du port européen à votre porte',
+            },
+            network: {
+                title: 'Réseau Certifié',
+                description: 'Garages partenaires aux Caraïbes',
+            },
+        },
+    },
+
     // Services Grid
     services: {
         eyebrow: 'Nos Services',
@@ -36,17 +56,17 @@ export const fr: Translations = {
             title: 'Import Véhicule',
             description: 'Des véhicules européens premium sélectionnés avec soin. BMW, Mercedes, Audi, Porsche et bien plus.',
         },
-        conciergerie: {
-            title: 'La Conciergerie',
-            description: 'Un service sur-mesure pour trouver le véhicule de vos rêves. Nous cherchons, vous choisissez.',
+        export: {
+            title: 'Export Véhicule',
+            description: 'Exportez votre véhicule depuis les Caraïbes vers l\'Europe ou d\'autres destinations.',
         },
         parts: {
             title: 'Pièces Détachées',
-            description: "Pièces d'origine et de haute qualité importées directement d'Europe.",
+            description: "Pièces d'origine et de haute qualité pour TOUS types de véhicules. Européens, japonais, américains - nous trouvons ce qu'il vous faut.",
         },
-        network: {
-            title: 'Réseau Garages',
-            description: "Des partenaires de confiance pour l'entretien et la réparation de votre véhicule.",
+        search: {
+            title: 'Recherche Véhicule',
+            description: 'Un service sur-mesure pour trouver le véhicule de vos rêves. Nous cherchons, vous choisissez.',
         },
     },
 
@@ -60,7 +80,7 @@ export const fr: Translations = {
         searchCta: 'Lancer une recherche',
         quoteCta: 'Demander un devis',
         customSearchCta: 'Configurer ma recherche personnalisée',
-        customSearchPrompt: 'Vous avez un modèle précis en tête ?',
+        customSearchPrompt: '',
         partsInfo: '💡 Toutes nos pièces sont sourcées directement auprès de fournisseurs européens agréés.',
         partsGuarantee: 'Origine constructeur ou équivalent haute qualité • Garantie incluse',
         expertise: 'Expertise',
@@ -78,10 +98,10 @@ export const fr: Translations = {
                 examples: 'Porsche 911, AMG GT, Audi RS, BMW M',
             },
             family: {
-                title: 'Family Business',
+                title: 'Daily Car',
                 subtitle: 'Confort & Polyvalence',
-                description: 'SUV haut de gamme spacieux pour la famille ou les affaires.',
-                examples: 'Range Rover, BMW X5, Audi Q8, GLE',
+                description: 'Berlines et SUV spacieux pour le quotidien, la famille ou les affaires.',
+                examples: 'Toyota C-HR, Hyundai i10, Nissan Qashqai, Kia Sportage',
             },
         },
         parts: {
@@ -181,5 +201,41 @@ export const fr: Translations = {
         },
         copyright: '© {year} Cedar Global. Tous droits réservés.',
         tagline: 'Fait avec passion pour les Caraïbes 🌴',
+    },
+    partsOrder: {
+        pageTitle: 'Commander mes pièces',
+        pageSubtitle: 'Remplissez le formulaire et recevez votre devis sous 24-48h',
+        back: 'Retour',
+        vehicleSection: 'Informations véhicule',
+        brand: 'Marque',
+        brandPlaceholder: 'Ex: BMW, Mercedes, Toyota...',
+        model: 'Modèle',
+        modelPlaceholder: 'Ex: X5, Classe E, Corolla...',
+        year: 'Année',
+        yearPlaceholder: 'Ex: 2020',
+        vin: 'Numéro VIN (optionnel)',
+        vinPlaceholder: '17 caractères',
+        partsSection: 'Pièces recherchées',
+        partsDescription: 'Décrivez les pièces dont vous avez besoin',
+        partsPlaceholder: 'Ex: Disques de frein avant, plaquettes, étrier droit...',
+        urgency: 'Urgence',
+        urgencyNormal: 'Normal (2-3 semaines)',
+        urgencyUrgent: 'Urgent (1 semaine)',
+        urgencyExpress: 'Express (3-5 jours)',
+        contactSection: 'Vos coordonnées',
+        name: 'Nom complet',
+        namePlaceholder: 'Votre nom',
+        phone: 'Téléphone',
+        phonePlaceholder: '+596 ...',
+        email: 'Email',
+        emailPlaceholder: 'votre@email.com',
+        message: 'Message complémentaire',
+        messagePlaceholder: 'Informations supplémentaires...',
+        submit: 'Envoyer ma demande',
+        submitting: 'Envoi en cours...',
+        info: '💡 Nous vous répondrons sous 24-48h avec un devis détaillé. Paiement sécurisé à la commande.',
+        successTitle: 'Demande envoyée !',
+        successMessage: 'Nous avons bien reçu votre demande de pièces détachées. Notre équipe vous contactera sous 24-48h avec un devis personnalisé.',
+        backToHome: "Retour à l'accueil",
     },
 };

@@ -13,6 +13,7 @@ interface VehicleCategory {
     titleKey: keyof typeof import("@/lib/translations/fr").fr.showcase.vehicles;
     icon: LucideIcon;
     gradient: string;
+    imageSrc: string;
 }
 
 interface PartCategory {
@@ -28,18 +29,21 @@ const vehicleCategories: VehicleCategory[] = [
         titleKey: "offroad",
         icon: Mountain,
         gradient: "from-emerald-900/40 to-background-secondary",
+        imageSrc: "/showcase-offroad.png",
     },
     {
         id: "prestige",
         titleKey: "prestige",
         icon: Crown,
         gradient: "from-amber-900/40 to-background-secondary",
+        imageSrc: "/showcase-prestige.png",
     },
     {
         id: "family",
         titleKey: "family",
         icon: Users,
         gradient: "from-blue-900/40 to-background-secondary",
+        imageSrc: "/showcase-daily.png",
     },
 ];
 
@@ -61,48 +65,36 @@ function VehicleCard({ category, index }: { category: VehicleCategory; index: nu
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="group relative overflow-hidden rounded-3xl border border-glass-border bg-background-secondary min-h-[320px] cursor-pointer"
+            className="group overflow-hidden rounded-3xl border border-glass-border bg-background-secondary cursor-pointer hover:border-accent/30 transition-all duration-300"
         >
-            {/* Gradient Background */}
-            <div className={cn(
-                "absolute inset-0 bg-gradient-to-br opacity-60 group-hover:opacity-80 transition-opacity duration-500",
-                category.gradient
-            )} />
-
-            {/* Content */}
-            <div className="relative z-10 h-full flex flex-col p-6 md:p-8">
-                {/* Icon */}
-                <div className="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
-                    <Icon className="w-7 h-7 text-accent" />
+            {/* Image Container */}
+            <div className="relative h-[200px] overflow-hidden">
+                <div
+                    className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700"
+                    style={{ backgroundImage: `url(${category.imageSrc})` }}
+                />
+                {/* Icon Badge */}
+                <div className="absolute top-4 left-4 w-12 h-12 rounded-xl bg-background/80 backdrop-blur-sm border border-glass-border flex items-center justify-center">
+                    <Icon className="w-6 h-6 text-accent" />
                 </div>
-
-                {/* Text */}
-                <div className="mt-auto">
-                    <p className="text-accent text-sm font-medium mb-1">{vehicleData.subtitle}</p>
-                    <h3 className="text-2xl font-bold text-foreground mb-2">{vehicleData.title}</h3>
-                    <p className="text-foreground-muted text-sm mb-3">{vehicleData.description}</p>
-                    <p className="text-foreground-subtle text-xs italic">{vehicleData.examples}</p>
-                </div>
-
                 {/* CTA Button - appears on hover */}
-                <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    whileHover={{ opacity: 1, y: 0 }}
-                    className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                >
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-background/40">
                     <a
                         href="#conciergerie"
-                        className="flex items-center gap-2 px-4 py-2 bg-accent hover:bg-accent-hover text-background text-sm font-semibold rounded-full transition-colors"
+                        className="flex items-center gap-2 px-5 py-2.5 bg-accent hover:bg-accent-hover text-background font-semibold rounded-full transition-colors shadow-lg text-sm"
                     >
                         {t.showcase.searchCta}
                         <ChevronRight className="w-4 h-4" />
                     </a>
-                </motion.div>
+                </div>
             </div>
 
-            {/* Hover glow */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-1/2 bg-accent/10 blur-3xl" />
+            {/* Text Content */}
+            <div className="p-6">
+                <p className="text-accent text-sm font-medium mb-1">{vehicleData.subtitle}</p>
+                <h3 className="text-xl font-bold text-foreground mb-2">{vehicleData.title}</h3>
+                <p className="text-foreground-muted text-sm mb-2">{vehicleData.description}</p>
+                <p className="text-foreground-subtle text-xs italic">{vehicleData.examples}</p>
             </div>
         </motion.div>
     );
@@ -265,11 +257,8 @@ export default function ShowcaseGallery() {
                                 ))}
                             </div>
 
-                            {/* Bottom CTA */}
+                            {/* Bottom CTA - simplified */}
                             <div className="text-center mt-12">
-                                <p className="text-foreground-muted mb-4">
-                                    {t.showcase.customSearchPrompt}
-                                </p>
                                 <a
                                     href="#conciergerie"
                                     className="inline-flex items-center gap-2 px-6 py-3 border border-accent text-accent hover:bg-accent hover:text-background font-semibold rounded-full transition-all duration-300"
@@ -287,16 +276,50 @@ export default function ShowcaseGallery() {
                             exit={{ opacity: 0, y: -20 }}
                             transition={{ duration: 0.3 }}
                         >
-                            <PartsCarousel />
+                            {/* Single Parts Card */}
+                            <div className="max-w-4xl mx-auto">
+                                <div className="group p-8 md:p-10 rounded-3xl border border-glass-border bg-background-secondary hover:border-accent/30 transition-all duration-300">
+                                    {/* Header */}
+                                    <div className="flex items-start justify-between mb-6">
+                                        <div className="w-16 h-16 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                                            <Wrench className="w-8 h-8 text-accent" />
+                                        </div>
+                                    </div>
 
-                            {/* Bottom info */}
-                            <div className="text-center mt-12 p-6 rounded-2xl bg-background-secondary/50 border border-glass-border max-w-2xl mx-auto">
-                                <p className="text-foreground-muted text-sm mb-2">
-                                    {t.showcase.partsInfo}
-                                </p>
-                                <p className="text-foreground-subtle text-xs">
-                                    {t.showcase.partsGuarantee}
-                                </p>
+                                    {/* Content */}
+                                    <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                                        Toutes vos pièces détachées
+                                    </h3>
+                                    <p className="text-foreground-muted text-lg mb-6 max-w-2xl">
+                                        Nous importons <span className="text-accent font-semibold">TOUTES</span> les pièces détachées pour <span className="text-accent font-semibold">TOUS</span> les types de véhicules : européens, japonais, américains.
+                                    </p>
+
+                                    {/* Examples */}
+                                    <div className="flex flex-wrap gap-3 mb-8">
+                                        {["Moteurs", "Transmissions", "Freins", "Carrosserie", "Électronique", "Suspension", "Échappement", "Climatisation"].map((part) => (
+                                            <span key={part} className="px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium">
+                                                {part}
+                                            </span>
+                                        ))}
+                                    </div>
+
+                                    {/* Info */}
+                                    <p className="text-foreground-muted text-sm mb-6">
+                                        {t.showcase.partsInfo}
+                                    </p>
+                                    <p className="text-foreground-subtle text-xs mb-8">
+                                        {t.showcase.partsGuarantee}
+                                    </p>
+
+                                    {/* CTA */}
+                                    <a
+                                        href="/order-parts"
+                                        className="inline-flex items-center gap-2 px-8 py-4 bg-accent hover:bg-accent-hover text-background font-semibold rounded-full transition-colors"
+                                    >
+                                        Commander mes pièces
+                                        <ChevronRight className="w-5 h-5" />
+                                    </a>
+                                </div>
                             </div>
                         </motion.div>
                     )}

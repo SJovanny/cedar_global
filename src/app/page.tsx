@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import TrustBar from "@/components/TrustBar";
 import ServicesGrid from "@/components/ServicesGrid";
 import BrandTicker from "@/components/BrandTicker";
 import ShowcaseGallery from "@/components/ShowcaseGallery";
@@ -12,6 +13,7 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
+        <TrustBar />
         <BrandTicker />
         <ServicesGrid />
         <ShowcaseGallery />
